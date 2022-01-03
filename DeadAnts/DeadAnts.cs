@@ -9,10 +9,16 @@ namespace DeadAnts
         {
             if (string.IsNullOrEmpty(antStr)) { return 0; }
 
-            var deadAntStr = Regex.Replace(antStr, "ant|[^ant]", "");
+            var deadAntStr = "";
+            RemoveAliveAntsStr(antStr, out deadAntStr);
+            
             var count = GetDeadAntCount(deadAntStr);
-
             return count;
+        }
+
+        private static void RemoveAliveAntsStr(string antStr, out string deadAntStr)
+        {
+            deadAntStr = Regex.Replace(antStr, "ant|[^ant]", "");
         }
 
         private static int GetDeadAntCount(string deadAntStr)
