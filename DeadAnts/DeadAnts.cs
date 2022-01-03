@@ -15,7 +15,7 @@ namespace DeadAnts
             return count;
         }
 
-        private int GetDeadAntCount(string deadAntStr)
+        private static int GetDeadAntCount(string deadAntStr)
         {
             if (string.IsNullOrEmpty(deadAntStr)) { return 0; }
                 
